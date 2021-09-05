@@ -1,0 +1,9 @@
+lib/
+bin/
+include/
+build/
+dist/
+genesys_sipserver_exporter.egg-info/
+pip-selfcheck.json
+pyvenv.cfg
+__pycache__
