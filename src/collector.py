@@ -68,7 +68,26 @@ class GenesysSIPServerCollector(object):
         yield XmlNodeGaugeMetricFamily('genesys_sipserver_mcu_channels', root, './sipCallManager/NMCUCHANNELS')
         yield XmlNodeCounterMetricFamily('genesys_sipserver_calls_abandoned_total', root, './sipCallManager/NCALLSABANDONED')
         yield XmlNodeGaugeMetricFamily('genesys_sipserver_logged_on_agents', root, './sipCallManager/NLOGGEDAGENTS')
-        yield XmlNodeGaugeMetricFamily('genesys_sipserver_tlib_clients', root, './sipCallManager/NTLIBCLIENTS')
+        yield XmlNodeGaugeMetricFamily('genesys_sipserver_ntlibclients', root, './sipCallManager/NTLIBCLIENTS')
+        yield XmlNodeGaugeMetricFamily('genesys_sipserver_nregistereddns', root, './sipCallManager/NREGISTEREDDNS') # Number of registered DNs Number of registered DNs by using a TRegisterAddress request.
+        yield XmlNodeGaugeMetricFamily('genesys_sipserver_nsipregisteredep', root, './sipCallManager/NSIPREGISTEREDEP') # / Number of active SIP registrations
+        yield XmlNodeGaugeMetricFamily('genesys_sipserver_nsipexpiredregs', root, './sipCallManager/NSIPEXPIREDREGS') # / Number of expired SIP registrations
+        yield XmlNodeGaugeMetricFamily('genesys_sipserver_pm_nactive_registrations', root, './sipPresenceManager/PM_NACTIVE_REGISTRATIONS') # / Number of active registrations
+        yield XmlNodeGaugeMetricFamily('genesys_sipserver_tl_ntransports', root, './sipTransportLayer/TL_NTRANSPORTS') # / Number of transports
+        yield XmlNodeGaugeMetricFamily('genesys_sipserver_sips_process_id', root, './sipServer/SIPS_PROCESS_ID') # / Process identifier
+        yield XmlNodeGaugeMetricFamily('genesys_sipserver_queue_main_cm', root, './sipServer/QUEUE_MAIN_CM') # / Queue Size Main>CM
+        yield XmlNodeGaugeMetricFamily('genesys_sipserver_queue_cm_main', root, './sipServer/QUEUE_CM_MAIN') # / Queue Size CM>Main
+        yield XmlNodeGaugeMetricFamily('genesys_sipserver_queue_from_trasnport', root, './sipServer/QUEUE_FROM_TRASNPORT') # / Queue Size From Transport
+        yield XmlNodeGaugeMetricFamily('genesys_sipserver_queue_to_trasnport', root, './sipServer/QUEUE_TO_TRASNPORT') # / Queue Size To Transport
+        yield XmlNodeGaugeMetricFamily('genesys_sipserver_readiness_switchover', root, './sipServer/READINESS_SWITCHOVER') # / Readiness For Switchover
+        yield XmlNodeGaugeMetricFamily('genesys_sipserver_readiness_upgrade', root, './sipServer/READINESS_UPGRADE') # / Readiness For Upgrade
+        yield XmlNodeGaugeMetricFamily('genesys_sipserver_num_sipps', root, './sipServer/NUM_SIPPS') # / Number of SIP Proxies available
+        yield XmlNodeGaugeMetricFamily('genesys_sipserver_num_msmls', root, './sipServer/NUM_MSMLS') # / Number of Media Services available
+        yield XmlNodeGaugeMetricFamily('genesys_sipserver_num_trunks', root, './sipServer/NUM_TRUNKS') # / Number of SIP TRUNKs available
+        yield XmlNodeGaugeMetricFamily('genesys_sipserver_num_softswitches', root, './sipServer/NUM_SOFTSWITCHES') # / Number of SIP SOFTSWITCHs available
+        yield XmlNodeGaugeMetricFamily('genesys_sipserver_ha_link', root, './sipServer/HA_LINK') # / HA link established
+        yield XmlNodeGaugeMetricFamily('genesys_sipserver_connection_to_scs', root, './sipServer/CONNECTION_TO_SCS') # / Connection to SCS
+        yield XmlNodeGaugeMetricFamily('genesys_sipserver_application_service', root, './sipServer/APPLICATION_SERVICE') # Application Service Available
         yield XmlNodeCounterMetricFamily('genesys_sipserver_call_recording_failed_total', root, './sipCallManager/NCALLRECORDINGFAILED')
 
         genesys_sipserver_trunk_calls = GaugeMetricFamily('genesys_sipserver_trunk_calls', 'Calls', labels=['app_name', 'app_version', 'app_ha_role','trunk_name'])

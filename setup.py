@@ -13,7 +13,7 @@ def main():
         author='jmurphyau',
         description='Prometheus exporter for Genesys SIP Server',
         url='https://github.com/jmurphyau/genesys_sipserver_exporter',
-        version='1.0.1',
+        version='1.1',
         python_requires='>=3.6.3',
         install_requires=get_requirements('requirements.txt'),
         scripts=['main.py'],

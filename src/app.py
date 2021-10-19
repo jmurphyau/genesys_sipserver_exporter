@@ -30,6 +30,8 @@ def make_wsgi_app(registry=REGISTRY):
           # Bake output
           status, header, output = _bake_output(registry, accept_header, params)
       # Return output
+      if not isinstance(status,str):
+        status = '500 error'
       start_response(status, [header])
       return [output]
 
